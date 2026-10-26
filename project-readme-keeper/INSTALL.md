@@ -6,6 +6,7 @@ A repo-local Agent Skill + persistent rules for **Codex** and **Cursor**, design
 
 ```text
 AGENTS.md                                  # merge into existing rules
+.codex/prompts/project-readme-keeper.md      # optional legacy Codex slash prompt
 .cursor/rules/project-memory.mdc            # Cursor Always Apply
 .agents/skills/project-readme-keeper/
   SKILL.md                                  # agent procedure
@@ -23,6 +24,35 @@ AGENTS.md                                  # merge into existing rules
 3. If you haven't yet configured Matt Pocock skills, run **`/setup-matt-pocock-skills`** in the repo. Confirm your ticket tracker; it creates `docs/agents/issue-tracker.md`. If you're using a configured tracker already, keep it.
 4. Run the initialization prompt below to merge/add README sections and create/merge `docs/PROGRESS.md`. The two `assets/*.template.md` are NOT project files and should stay in the skill folder.
 5. Review the diff and the tracker mapping. Do not mark goals/stages/ticket statuses as known until verified.
+
+## Invocation and slash commands
+
+Install `.agents/skills/project-readme-keeper/` at the root of the project you want to maintain first. Keeping this distribution inside a `project-readme-keeper/` subfolder does not expose the skill at the parent repository root in Codex.
+
+| Host | Invocation | Setup |
+| --- | --- | --- |
+| Cursor | `/project-readme-keeper` | Install the skill in the project's `.agents/skills/`; type `/` in Agent chat and select it. |
+| Codex | `$project-readme-keeper` | Install the skill in the project's `.agents/skills/`. CLI / IDE users can also select it via `/skills`. |
+| Codex CLI / IDE extension (legacy) | `/prompts:project-readme-keeper` | Install the skill, then separately copy the bundled prompt into your Codex home as below. |
+
+For the optional Codex legacy shortcut, run from this package directory:
+
+```bash
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/prompts"
+cp -i .codex/prompts/project-readme-keeper.md "${CODEX_HOME:-$HOME/.codex}/prompts/project-readme-keeper.md"
+```
+
+Restart your Codex CLI session or reload the IDE extension, then run:
+
+```text
+/prompts:project-readme-keeper
+```
+
+Codex custom prompts are **deprecated**; prefer the skill invocation for new setups. They are local to the user's Codex home, so checking `.codex/prompts/` into a project does not install the shortcut. This package does not register a bare `/project-readme-keeper` command in Codex or claim desktop support for the legacy prompt.
+
+In either host, invoking the skill without a task initializes or reconciles README and progress documentation; add a request to focus the work, for example `/project-readme-keeper sync progress with the configured tracker` in Cursor. All entry points use the same skill workflow and preserve its existing ticket and publishing boundaries.
+
+References: [Cursor skills and slash invocation](https://cursor.com/docs/skills) · [Codex skills](https://learn.chatgpt.com/docs/build-skills) · [Codex custom prompts (deprecated)](https://learn.chatgpt.com/docs/custom-prompts).
 
 ### Initialization prompt (paste into Codex or Cursor)
 

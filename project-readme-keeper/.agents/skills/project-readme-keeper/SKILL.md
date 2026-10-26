@@ -7,6 +7,12 @@ description: Initialize and continuously sync a concise README (one-sentence goa
 
 Keep `README.md` as the **project overview** and `docs/PROGRESS.md` as the **ticket dashboard**. The configured issue tracker remains the **sole canonical record for tickets**. Read the repo's `AGENTS.md` hard rules and `references/matt-pocock-integration.md` when relevant.
 
+## Manual invocation
+
+After installation, invoke this skill with `/project-readme-keeper` in Cursor or `$project-readme-keeper` in Codex. Codex CLI / IDE users can also select it via `/skills`. The package includes an optional legacy Codex prompt for `/prompts:project-readme-keeper`; its separate user-level installation is documented in the package's `INSTALL.md`.
+
+Follow any accompanying request. With no accompanying task, initialize or reconcile the project overview and progress dashboard using the initialization workflow below. Invocation alone does not authorize ticket publication, issue closure, commits, pushes, or deployment.
+
 ## Start of every project task
 
 1. Read current `README.md`, `docs/PROGRESS.md`, and `docs/agents/issue-tracker.md` (if they exist). Read the specific canonical tickets involved, not only cached progress rows.

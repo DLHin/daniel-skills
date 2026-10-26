@@ -1,0 +1,19 @@
+---
+description: Keep README goals/stages/features and docs/PROGRESS.md ticket dashboard synchronized on every project task.
+alwaysApply: true
+---
+
+# Project Memory — Always Apply
+
+Follow `AGENTS.md` Project Memory rules at every project planning/discussion/implementation/closeout turn.
+
+- READ `README.md`, `docs/PROGRESS.md`, and configured tracker instructions at `docs/agents/issue-tracker.md` before project work.
+- New concrete feature discussed -> add/update README `Possible Features` row, default Proposed, Importance TBD, Urgency TBD, **even without coding**.
+- Feature decisions -> update README; only an approved `/to-tickets` publication creates tickets.
+- Ticket created/started/blocked/completed/cancelled -> update canonical tracker first, then mirror in `docs/PROGRESS.md`.
+- Verified completion -> review the linked feature and milestone evidence in README; do not invent a Done state.
+- README `## Progress` links to `docs/PROGRESS.md`; don't duplicate ticket statuses inside README.
+- Unclear goal -> run `/grill-me` if available or clarify, without inventing facts.
+- End every triggered task with verified synchronization or a truthful `Not synced` blocker.
+
+See `.agents/skills/project-readme-keeper/SKILL.md` for exact table contracts and migration procedure. This rule must not conflict with existing project user approvals or tracker conventions.

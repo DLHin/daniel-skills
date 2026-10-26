@@ -1,4 +1,4 @@
-# project-readme-keeper v2 — installation
+# project-readme-keeper — installation
 
 A repo-local Agent Skill + persistent rules for **Codex** and **Cursor**, designed to cooperate with **Matt Pocock's engineering skills**.
 

@@ -3,7 +3,7 @@ name: project-readme-keeper
 description: Initialize and continuously sync a concise README (one-sentence goal, extensible project stages, possible features, link to Progress) and docs/PROGRESS.md (all ticket statuses) with Matt Pocock's configured issue tracker. Use when starting a repo, discussing new features, deciding scope, publishing tickets, implementing, or verifying completion.
 ---
 
-# Project README Keeper v2
+# Project README Keeper
 
 Keep `README.md` as the **project overview** and `docs/PROGRESS.md` as the **ticket dashboard**. The configured issue tracker remains the **sole canonical record for tickets**. Read the repo's `AGENTS.md` hard rules and `references/matt-pocock-integration.md` when relevant.
 
